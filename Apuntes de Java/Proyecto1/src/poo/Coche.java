@@ -7,9 +7,9 @@ public class Coche {
 	private int motor;
 	private int peso_plataforma;
 	
-	String color;
-	int peso_total;
-	boolean asientos_cuero,climatizador;
+	private String color;
+	private int peso_total;
+	private boolean asientos_cuero,climatizador;
 	
 	//método
 	public Coche() {
@@ -21,18 +21,38 @@ public class Coche {
 	}
 	
 	//método getter
-	public String dime_largo() {
-		return "El largo del coche es: "+ largo;
+	public String dime_datos_generales() {
+		return "La plataforma del vehículo tiene "+ruedas+ " ruedas"
+	+". Mide "+largo/1000 + " metros con un ancho de "+ancho+ "cm.";
 	}
 	
 	//método setter: modificar el valor de los objetos
-	public void establece_color() {
-		color="azul";
+	public void establece_color(String color_coche) {
+		color = color_coche; //paso de parámetros
+		//color="azul";
 	}
 	
 	//método getter
 		public String dime_color() {
 			return "El color del coche es: "+ color;
 		}
+
+	public void configura_asientos(String asientos_cuero){
+			if(asientos_cuero=="si") {
+				this.asientos_cuero=true;
+			}else {
+				this.asientos_cuero=false;
+			}
+	}
+	
+	public String dime_asientos() {
+		if(asientos_cuero=true) {
+			return "El coche tiene asientos de cuero";
+		}else {
+			return "El coche tiene asientos de serie";
+		}
+	}
+
+			 
 
 }
