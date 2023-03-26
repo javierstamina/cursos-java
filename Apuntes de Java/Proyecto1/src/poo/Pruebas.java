@@ -41,3 +41,5 @@ class Empleados{
 	private int Id;
 	private static int IdSiguiente=1;
 }
+
+

@@ -24,11 +24,23 @@ public class Uso_Empleado {
 		*/
 		
 		//Por ARRAYS
-		Empleado[] misEmpleados=new Empleado[4];
-		misEmpleados[0]=new Empleado("Paco Gomez",85000,1990,12,17);
-		misEmpleados[1]=new Empleado("Ana Lopez",95000,1995,6,2);
-		misEmpleados[2]=new Empleado("María",105000,2002,3,15);
+		
+		Jefatura jefe_RRHH=new Jefatura("Juan",55000,2006,9,25);
+		jefe_RRHH.estableceIncentivo(2570);
+		
+		Empleado[] misEmpleados=new Empleado[6];
+		misEmpleados[0]=new Empleado("Paco Gomez",30000,1990,12,17);
+		misEmpleados[1]=new Empleado("Ana Lopez",31000,1995,6,2);
+		misEmpleados[2]=new Empleado("María",32000,2002,3,15);
 		misEmpleados[3]=new Empleado("Javier");
+		misEmpleados[4]=jefe_RRHH; //Polimorfismo, principio de sustitución
+		misEmpleados[5]=new Jefatura("María",95000,1999,5,26);
+		
+		Jefatura jefa_Finanzas=(Jefatura) misEmpleados[5]; //Casting
+		jefa_Finanzas.estableceIncentivo(5000);
+		
+		
+		
 		/*for(int i=0;i<3;i++) {
 			misEmpleados[i].subeSueldo(5);
 		}*/
@@ -41,7 +53,7 @@ public class Uso_Empleado {
 			+ " Fecha de Alta: "+misEmpleados[i].dameFechaContrato());
 		}*/
 		for(Empleado e: misEmpleados) {
-			System.out.println("Nombre: " + e.dameNombre()+" Sueldo: "+e.dameSueldo()
+			System.out.println("Nombre: " + e.dameNombre()+" Sueldo: "+e.dameSueldo() //enlazado dinámico
 					+ " Fecha de Alta: "+e.dameFechaContrato());
 		}
 		
@@ -83,3 +95,27 @@ class Empleado{
 	private double sueldo;
 	private Date altaContrato;
 }
+
+class Jefatura extends Empleado {
+	
+	public Jefatura(String nom, double sue,int agno, int mes, int dia) {
+		super(nom, sue, agno, mes, dia);
+	}
+	
+	public void estableceIncentivo(double b){
+		incentivo=b;
+	}
+	public double dameSueldo() {
+		double sueldoJefe=super.dameSueldo();
+		return sueldoJefe + incentivo;
+	}
+	private double incentivo;
+	
+}
+
+final class Director extends Jefatura{
+	public Director(String nom, double sue,int agno, int mes, int dia){
+		super(nom, sue, agno, mes, dia);
+	}
+}
+
