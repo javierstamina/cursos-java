@@ -39,7 +39,27 @@ public class Uso_Empleado {
 		Jefatura jefa_Finanzas=(Jefatura) misEmpleados[5]; //Casting
 		jefa_Finanzas.estableceIncentivo(5000);
 		
+		System.out.println(jefa_Finanzas.tomar_decisiones("Dar más días de vacaciones a empleados."));
 		
+		System.out.println("El jefe "+ jefa_Finanzas.dameNombre()+ " tiene un bonus de: "+jefa_Finanzas.establece_bonus(500));
+		
+		System.out.println(misEmpleados[3].dameNombre()+" tiene un bonus de: "+misEmpleados[3].establece_bonus(200));
+		
+		/*
+		 * 
+		 * USO DE INSTANCE OF
+		Empleado director_comercial=new Jefatura("Sandra",85000,2012,5,5);
+		
+		Comparable ejemplo = new Empleado("Elizabeth",95000,2011,5,7);
+		
+		if(director_comercial instanceof Empleado) {
+			System.out.println("Es de tipo Jefatura");;
+		}
+		
+		if(ejemplo instanceof Comparable) {
+			System.out.println("Implementa la interfaz comparable");;
+		}
+		*/
 		
 		/*for(int i=0;i<3;i++) {
 			misEmpleados[i].subeSueldo(5);
@@ -52,6 +72,10 @@ public class Uso_Empleado {
 			System.out.println("Nombre: " + misEmpleados[i].dameNombre()+" Sueldo: "+misEmpleados[i].dameSueldo()
 			+ " Fecha de Alta: "+misEmpleados[i].dameFechaContrato());
 		}*/
+		
+		//ordenar objetos
+		Arrays.sort(misEmpleados);
+		
 		for(Empleado e: misEmpleados) {
 			System.out.println("Nombre: " + e.dameNombre()+" Sueldo: "+e.dameSueldo() //enlazado dinámico
 					+ " Fecha de Alta: "+e.dameFechaContrato());
@@ -61,13 +85,18 @@ public class Uso_Empleado {
 
 }
 
-class Empleado{
+class Empleado implements Comparable, Trabajadores{//implementar la intefaz comparable y trabajadores
 	//método constructor con parámetros
 	public Empleado(String nom, double sue, int agno,int mes, int dia) {
 		nombre=nom;
 		sueldo=sue;
 		GregorianCalendar calendario = new GregorianCalendar(agno,mes-1,dia);
 		altaContrato=calendario.getTime();
+	}
+	
+	//desarrollar el metod de Trabajadores
+	public double establece_bonus(double gratificacion) {
+		return Trabajadores.bonus_base+gratificacion;
 	}
 	
 	//sobrecarga de constructores
@@ -90,16 +119,40 @@ class Empleado{
 		double aumento=sueldo*porcentaje/100;
 		sueldo+=aumento;
 	}
+
+	//***********************
+	//Para ordenar por sueldo
+	public int compareTo(Object miObjeto) {
+		Empleado otroEmpleado=(Empleado) miObjeto; //casting
+		if(this.sueldo<otroEmpleado.sueldo) {
+			return -1;
+		}
+		if(this.sueldo>otroEmpleado.sueldo) {
+			return 1;
+		}
+		return 0;
+	}
+	//****************
 	
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
 }
 
-class Jefatura extends Empleado {
-	
+class Jefatura extends Empleado implements Jefes {
+		
 	public Jefatura(String nom, double sue,int agno, int mes, int dia) {
 		super(nom, sue, agno, mes, dia);
+	}
+	//desarrollar el metodo de Jefes
+	public String tomar_decisiones(String decision) {
+		return "Un miembro de la dirección ha tomado la decision de: "+decision;
+	}
+	
+	//desarrollar el metodo de Trabajadores
+	public double establece_bonus(double gratificacion){
+		double prima=2000;
+		return Trabajadores.bonus_base+gratificacion+prima;
 	}
 	
 	public void estableceIncentivo(double b){
