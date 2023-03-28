@@ -3,9 +3,9 @@ cursos de java
 
 ##Avance
 
-Curso Java. Presentación. Vídeo 1
-Curso Java. Instalación JRE y Eclipse. Vídeo 2
-Curso Java. Introducción. Vídeo 3
+- Curso Java. Presentación. Vídeo 1
+- Curso Java. Instalación JRE y Eclipse. Vídeo 2
+- Curso Java. Introducción. Vídeo 3
 Curso Java. Estructuras principales I. Vídeo 4
 Curso Java. Estructuras principales II. Vídeo 5
 Curso Java. Estructuras principales III. Declaración variables Eclipse Vídeo 6
