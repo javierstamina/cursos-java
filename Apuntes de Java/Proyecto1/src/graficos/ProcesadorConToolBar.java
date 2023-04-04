@@ -66,6 +66,7 @@ class LaminaProcesador6 extends JPanel {
 		JRadioButtonMenuItem dieciseis = new JRadioButtonMenuItem("16");
 		JRadioButtonMenuItem veinte = new JRadioButtonMenuItem("20");
 		JRadioButtonMenuItem veinticuatro = new JRadioButtonMenuItem("24");
+
 		tamanioLetra.add(doce);
 		tamanioLetra.add(dieciseis);
 		tamanioLetra.add(veinte);
