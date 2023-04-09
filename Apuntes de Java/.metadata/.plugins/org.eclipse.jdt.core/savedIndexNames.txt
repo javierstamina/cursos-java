@@ -1,4 +1,4 @@
-INDEX VERSION 1.132+C:\Users\jargo\Documents\java-proyectos\Apuntes de Java\.metadata\.plugins\org.eclipse.jdt.core
-357871136.index
-3051980258.index
+INDEX VERSION 1.132+/home/javier/Documentos/Proyectos/cursos-java/Apuntes de Java/.metadata/.plugins/org.eclipse.jdt.core
+2734788862.index
 1865797976.index
+137007291.index
