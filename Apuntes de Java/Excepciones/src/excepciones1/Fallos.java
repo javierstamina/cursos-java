@@ -23,8 +23,8 @@ public class Fallos {
 		// Peticion de datos personales
 		String nombre = JOptionPane.showInputDialog("Introduzca su nombre: ");
 		int edad = Integer.parseInt(JOptionPane.showInputDialog("Introduzca su edad: "));
-		System.out.println("Hola " + nombre + ", tiene " + edad + " años." + 
-			" El programa terminó su ejecución.");
+		System.out.println("Hola " + nombre + ", tiene " + edad + " aÃ±os." + 
+			" El programa terminÃ² su ejecuciÃ²n.");
 	}
 
 }

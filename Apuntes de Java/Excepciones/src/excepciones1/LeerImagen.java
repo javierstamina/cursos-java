@@ -46,7 +46,7 @@ class LaminaConImagen extends JPanel{
 	
 	public void paintComponent(Graphics g) {	
 		super.paintComponent(g);
-		if(imagen == null)
+		if(imagen == null)// exxcepciiòn no comprobadas
 			g.drawString("No pudimos cargar la imagen", 10, 10);
 		else{
 			int anchuraImagen=imagen.getWidth(this);

@@ -98,6 +98,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/javier/Documentos/Proyectos/cursos-java/Apuntes de Java/AccesoFicheros"/>
+			<item value="/home/javier/Documentos/Proyectos/cursos-java/Apuntes de Java/Excepciones"/>
 			<item value="/home/javier/Documentos/Proyectos/cursos-java/Apuntes de Java/JARFirmado"/>
 			<item value="/home/javier/Documentos/Proyectos/cursos-java/Apuntes de Java/Calculadora"/>
 			<item value="/home/javier/Documentos/Proyectos/cursos-java/Apuntes de Java/Aplicaciones"/>
